@@ -1,6 +1,6 @@
 === Library ===
 Contributors: developdaly
-Tags: strings, library, content, shortcodes, dictionary
+Tags: strings, library, content, shortcodes, dictionary, wp-strings
 Requires at least: 3.8.1
 Tested up to: 3.8.1
 Stable tag: 1.0.0
@@ -12,6 +12,14 @@ Create a library of reusable terms (strings) and display their contents anywhere
 == Description ==
 
 Create a library of reusable terms (strings) and display their contents anywhere on your site with a shortcode.
+
+Library lets you create a library of reusable terms (or strings) without any code necessary and access a term's content with a shortcode.
+
+You can add a term (just like you'd add a post or page) called "Copyright Line" and its content could be "©2014 Your Company" and then use that anywhere on the site with `[library term="copyright-line"]` or `<?php do_shortcode( '[library term="copyright-line"] ); ?>`.
+
+Because the library terms are a post type they inherit WordPress features like revision history, draft/scheduled/published, ability to change the term slug, full HTML, and so on.
+
+[**Contribute on Github**](https://github.com/developdaly/library) | [**Report Bugs**](https://github.com/developdaly/library/issues?labels=bug&milestone=&page=1&state=open)
 
 == Installation ==
 
