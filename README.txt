@@ -13,6 +13,7 @@ Create a library of reusable terms (strings) and display their contents anywhere
 
 Create a library of reusable terms (strings) and display their contents anywhere on your site with a shortcode.
 
+== Installation ==
 
 = Using The WordPress Dashboard =
 
