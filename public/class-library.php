@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name.
+ * Library.
  *
  * @package   Library
  * @author    Patrick Daly <patrick@developdaly.com>
@@ -10,7 +10,7 @@
  */
 
 /**
- * Plugin class. This class should ideally be used to work with the
+ * Library class. This class should ideally be used to work with the
  * public-facing side of the WordPress site.
  *
  * If you're interested in introducing administrative or dashboard
