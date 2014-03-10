@@ -59,5 +59,10 @@ The copyright line in the footer of a website might change sometimes to reflect 
 
 == Changelog ==
 
+= 1.0.1 =
+* Updated base language file
+* Typo fixes
+* Removed blank index.php files
+
 = 1.0 =
 * First version
