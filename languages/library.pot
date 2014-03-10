@@ -1,0 +1,84 @@
+# Copyright (C) 2014 Patrick Daly
+# This file is distributed under the same license as the Library package.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/plugins/library\n"
+"POT-Creation-Date: 2014-03-10 15:30-0600\n"
+"PO-Revision-Date: 2014-03-10 15:30-0600\n"
+"Last-Translator: Patrick Daly <patrick@developdaly.com>\n"
+"Language-Team: Develop Daly <patrick@developdaly.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html_e;esc_html__;esc_attr_e;"
+"esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-library-admin.php:80
+msgctxt "library_term"
+msgid "Terms"
+msgstr "Terms"
+
+#: admin/class-library-admin.php:81
+msgctxt "library_term"
+msgid "Term"
+msgstr "Term"
+
+#: admin/class-library-admin.php:82
+msgctxt "library_term"
+msgid "Add New"
+msgstr "Add New"
+
+#: admin/class-library-admin.php:83
+msgctxt "library_term"
+msgid "Add New Term"
+msgstr "Add New Term"
+
+#: admin/class-library-admin.php:84
+msgctxt "library_term"
+msgid "Edit Term"
+msgstr "Edit Term"
+
+#: admin/class-library-admin.php:85
+msgctxt "library_term"
+msgid "New Term"
+msgstr "New Term"
+
+#: admin/class-library-admin.php:86
+msgctxt "library_term"
+msgid "View Term"
+msgstr "View Term"
+
+#: admin/class-library-admin.php:87
+msgctxt "library_term"
+msgid "Search Terms"
+msgstr "Search Terms"
+
+#: admin/class-library-admin.php:88
+msgctxt "library_term"
+msgid "No terms found"
+msgstr "Not terms found"
+
+#: admin/class-library-admin.php:89
+msgctxt "library_term"
+msgid "No terms found in Trash"
+msgstr "No terms found in Trash"
+
+#: admin/class-library-admin.php:90
+msgctxt "library_term"
+msgid "Parent Term:"
+msgstr "Parent Term:"
+
+#: admin/class-library-admin.php:91
+msgctxt "library_term"
+msgid "Library"
+msgstr "LIbrary"
+
+#: admin/class-library-admin.php:135
+msgid "How to Use this Term"
+msgstr "How to Use this Term"
