@@ -15,7 +15,7 @@
  * Plugin Name:       Library
  * Plugin URI:        http://wordpress.org/plugins/library
  * Description:       Create a library of reusable terms (strings) and display their contents anywhere on your site with a shortcode.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Patrick Daly
  * Author URI:        http://developdaly.com
  * Text Domain:       library
