@@ -49,14 +49,14 @@ class Library_Admin {
 
 		$plugin = Library::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
-		
+
 		add_action( 'init', array( $this, 'register' ) );
-		
+
 		/* Fire our meta box setup function on the post editor screen. */
 		add_action( 'load-post.php',		array( $this, 'library_meta_boxes_setup' ) );
 
 	}
-	
+
 	/**
 	 * Return an instance of this class.
 	 *
@@ -73,10 +73,10 @@ class Library_Admin {
 
 		return self::$instance;
 	}
-	
+
 	public function register() {
 
-		$labels = array( 
+		$labels = array(
 			'name' => _x( 'Terms', 'library_term' ),
 			'singular_name' => _x( 'Term', 'library_term' ),
 			'add_new' => _x( 'Add New', 'library_term' ),
@@ -91,7 +91,7 @@ class Library_Admin {
 			'menu_name' => _x( 'Library', 'library_term' ),
 		);
 
-		$args = array( 
+		$args = array(
 			'labels' => $labels,
 			'hierarchical' => false,
 			'supports' => array( 'title', 'editor', 'revisions' ),
@@ -147,10 +147,10 @@ class Library_Admin {
 	 */
 	public function library_class_meta_box( $object, $box ) {
 		global $post;
-		
+
 		echo '<p>Display this content inside your content use <code>[library term="'. $post->post_name .'"]</code> OR to use inside of a template file use <code>&lt;?php echo do_shortcode(\'[library term="'. $post->post_name .'"]\') ?&gt;</code></p>';
 		echo '<p>You can change the term slug by editing the permalink slug underneath the title.</p>';
-		
+
 	}
-	
+
 }
