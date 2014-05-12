@@ -2,8 +2,8 @@
 Contributors: developdaly
 Tags: strings, library, content, shortcodes, dictionary, wp-strings
 Requires at least: 3.8.1
-Tested up to: 3.8.1
-Stable tag: 1.0.1
+Tested up to: 3.9.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,10 @@ The copyright line in the footer of a website might change sometimes to reflect 
 4. Activate the plugin in the Plugin dashboard
 
 == Changelog ==
+
+= 1.0.2 =
+* Localized admin screen strings
+* Escaped admin screen strings
 
 = 1.0.1 =
 * Updated base language file
