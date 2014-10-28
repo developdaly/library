@@ -148,8 +148,13 @@ class Library_Admin {
 	public function library_class_meta_box( $object, $box ) {
 		global $post;
 
-		echo esc_html( _e( '<p>To display this inside your content use <code>[library term="'. $post->post_name .'"]</code> OR to use this inside of a template file use <code>&lt;?php echo do_shortcode(\'[library term="'. $post->post_name .'"]\') ?&gt;</code></p>', 'library' ) );
-		echo esc_html( _e( '<p>You can change the term slug by editing the permalink slug underneath the title.</p>', 'library' ) );
+		$shortcode_example = '<code>[library term="' . $post->post_name . '"]</code>';
+		$php_example = '<code>&lt;?php echo do_shortcode( \'[library term="' . $post->post_name . '"]\' ) ?&gt;</code>';
+		echo '<p>';
+		printf( __( 'To display this inside your content use %s OR to use this inside of a template file use %s', 'library' ), $shortcode_example, $php_example );
+		echo '</p><p>';
+		_e( 'You can change the term slug by editing the permalink slug underneath the title.', 'library' );
+		echo '</p>';
 
 	}
 
