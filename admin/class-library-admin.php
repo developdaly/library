@@ -77,18 +77,18 @@ class Library_Admin {
 	public function register() {
 
 		$labels = array(
-			'name' => _x( 'Terms', 'library_term' ),
-			'singular_name' => _x( 'Term', 'library_term' ),
-			'add_new' => _x( 'Add New', 'library_term' ),
-			'add_new_item' => _x( 'Add New Term', 'library_term' ),
-			'edit_item' => _x( 'Edit Term', 'library_term' ),
-			'new_item' => _x( 'New Term', 'library_term' ),
-			'view_item' => _x( 'View Term', 'library_term' ),
-			'search_items' => _x( 'Search Terms', 'library_term' ),
-			'not_found' => _x( 'No terms found', 'library_term' ),
-			'not_found_in_trash' => _x( 'No terms found in Trash', 'library_term' ),
-			'parent_item_colon' => _x( 'Parent Term:', 'library_term' ),
-			'menu_name' => _x( 'Library', 'library_term' ),
+			'name' => _x( 'Terms', 'shortcode terms general name', 'library' ),
+			'singular_name' => _x( 'Term', 'shortcode term singular name', 'library' ),
+			'add_new' => _x( 'Add New', 'shortcode term', 'library' ),
+			'add_new_item' => __( 'Add New Term', 'library' ),
+			'edit_item' => __( 'Edit Term', 'library' ),
+			'new_item' => __( 'New Term', 'library' ),
+			'view_item' => __( 'View Term', 'library' ),
+			'search_items' => __( 'Search Terms', 'library' ),
+			'not_found' => __( 'No terms found', 'library' ),
+			'not_found_in_trash' => __( 'No terms found in Trash', 'library' ),
+			'parent_item_colon' => __( 'Parent Term:', 'library' ),
+			'menu_name' => _x( 'Library', 'shortcode term collection', 'library' ),
 		);
 
 		$args = array(
