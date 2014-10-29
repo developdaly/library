@@ -77,18 +77,18 @@ class Library_Admin {
 	public function register() {
 
 		$labels = array(
-			'name' => _x( 'Terms', 'library_term' ),
-			'singular_name' => _x( 'Term', 'library_term' ),
-			'add_new' => _x( 'Add New', 'library_term' ),
-			'add_new_item' => _x( 'Add New Term', 'library_term' ),
-			'edit_item' => _x( 'Edit Term', 'library_term' ),
-			'new_item' => _x( 'New Term', 'library_term' ),
-			'view_item' => _x( 'View Term', 'library_term' ),
-			'search_items' => _x( 'Search Terms', 'library_term' ),
-			'not_found' => _x( 'No terms found', 'library_term' ),
-			'not_found_in_trash' => _x( 'No terms found in Trash', 'library_term' ),
-			'parent_item_colon' => _x( 'Parent Term:', 'library_term' ),
-			'menu_name' => _x( 'Library', 'library_term' ),
+			'name' => _x( 'Terms', 'shortcode terms general name', 'library' ),
+			'singular_name' => _x( 'Term', 'shortcode term singular name', 'library' ),
+			'add_new' => _x( 'Add New', 'shortcode term', 'library' ),
+			'add_new_item' => __( 'Add New Term', 'library' ),
+			'edit_item' => __( 'Edit Term', 'library' ),
+			'new_item' => __( 'New Term', 'library' ),
+			'view_item' => __( 'View Term', 'library' ),
+			'search_items' => __( 'Search Terms', 'library' ),
+			'not_found' => __( 'No terms found', 'library' ),
+			'not_found_in_trash' => __( 'No terms found in Trash', 'library' ),
+			'parent_item_colon' => __( 'Parent Term:', 'library' ),
+			'menu_name' => _x( 'Library', 'shortcode term collection', 'library' ),
 		);
 
 		$args = array(
@@ -139,8 +139,13 @@ class Library_Admin {
 	public function library_class_meta_box( $object, $box ) {
 		global $post;
 
-		echo esc_html( _e( '<p>To display this inside your content use <code>[library term="'. $post->post_name .'"]</code> OR to use this inside of a template file use <code>&lt;?php echo do_shortcode(\'[library term="'. $post->post_name .'"]\') ?&gt;</code></p>', 'library' ) );
-		echo esc_html( _e( '<p>You can change the term slug by editing the permalink slug underneath the title.</p>', 'library' ) );
+		$shortcode_example = '<code>[library term="' . $post->post_name . '"]</code>';
+		$php_example = '<code>&lt;?php echo do_shortcode( \'[library term="' . $post->post_name . '"]\' ) ?&gt;</code>';
+		echo '<p>';
+		printf( __( 'To display this inside your content use %s OR to use this inside of a template file use %s', 'library' ), $shortcode_example, $php_example );
+		echo '</p><p>';
+		_e( 'You can change the term slug by editing the permalink slug underneath the title.', 'library' );
+		echo '</p>';
 
 	}
 
