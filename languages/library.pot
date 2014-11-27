@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Library package.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.1\n"
+"Project-Id-Version: 1.0.3\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/plugins/library\n"
-"POT-Creation-Date: 2014-10-28 15:32-0000\n"
-"PO-Revision-Date: 2014-10-28 15:33-0000\n"
+"POT-Creation-Date: 2014-11-27 12:22-0000\n"
+"PO-Revision-Date: 2014-11-27 12:25-0000\n"
 "Last-Translator: Mike Manger <mike.manger@lighthouseuk.net>\n"
 "Language-Team: Develop Daly <patrick@developdaly.com>\n"
 "Language: en_US\n"
@@ -19,71 +19,99 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-library-admin.php:80
+#: admin/class-library-admin.php:84
 msgctxt "shortcode terms general name"
 msgid "Terms"
 msgstr ""
 
-#: admin/class-library-admin.php:81
+#: admin/class-library-admin.php:85
 msgctxt "shortcode term singular name"
 msgid "Term"
 msgstr ""
 
-#: admin/class-library-admin.php:82
+#: admin/class-library-admin.php:86
 msgctxt "shortcode term"
 msgid "Add New"
 msgstr ""
 
-#: admin/class-library-admin.php:83
+#: admin/class-library-admin.php:87
 msgid "Add New Term"
 msgstr ""
 
-#: admin/class-library-admin.php:84
+#: admin/class-library-admin.php:88
 msgid "Edit Term"
 msgstr ""
 
-#: admin/class-library-admin.php:85
+#: admin/class-library-admin.php:89
 msgid "New Term"
 msgstr ""
 
-#: admin/class-library-admin.php:86
+#: admin/class-library-admin.php:90
 msgid "View Term"
 msgstr ""
 
-#: admin/class-library-admin.php:87
+#: admin/class-library-admin.php:91
 msgid "Search Terms"
 msgstr ""
 
-#: admin/class-library-admin.php:88
+#: admin/class-library-admin.php:92
 msgid "No terms found"
 msgstr ""
 
-#: admin/class-library-admin.php:89
+#: admin/class-library-admin.php:93
 msgid "No terms found in Trash"
 msgstr ""
 
-#: admin/class-library-admin.php:90
+#: admin/class-library-admin.php:94
 msgid "Parent Term:"
 msgstr ""
 
-#: admin/class-library-admin.php:91
+#: admin/class-library-admin.php:95
 msgctxt "shortcode term collection"
 msgid "Library"
 msgstr ""
 
-#: admin/class-library-admin.php:135
+#: admin/class-library-admin.php:130
 msgid "How to Use this Term"
 msgstr ""
 
-#: admin/class-library-admin.php:154
+#: admin/class-library-admin.php:149
 #, php-format
 msgid ""
 "To display this inside your content use %s OR to use this inside of a "
 "template file use %s"
 msgstr ""
 
-#: admin/class-library-admin.php:156
+#: admin/class-library-admin.php:151
 msgid ""
 "You can change the term slug by editing the permalink slug underneath the "
 "title."
+msgstr ""
+
+#: admin/class-library-admin.php:192 admin/class-library-admin.php:195
+msgid "Add Library Shortcode"
+msgstr ""
+
+#: admin/class-library-admin.php:213
+msgid "Please select a shortcode"
+msgstr ""
+
+#: admin/class-library-admin.php:223
+msgid "Insert A Term"
+msgstr ""
+
+#: admin/class-library-admin.php:225
+msgid "Select a term below to add it to your post or page."
+msgstr ""
+
+#: admin/class-library-admin.php:229
+msgid "Select a Term"
+msgstr ""
+
+#: admin/class-library-admin.php:253
+msgid "Insert Shortcode"
+msgstr ""
+
+#: admin/class-library-admin.php:254
+msgid "Cancel"
 msgstr ""
