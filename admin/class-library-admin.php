@@ -55,6 +55,10 @@ class Library_Admin {
 		/* Fire our meta box setup function on the post editor screen. */
 		add_action( 'load-post.php',		array( $this, 'library_meta_boxes_setup' ) );
 
+		add_action( 'media_buttons', array( $this, 'add_form_button' ), 20 );
+
+		add_action( 'admin_footer',  array( $this, 'add_mce_popup' ) );
+
 	}
 
 	/**
@@ -148,5 +152,112 @@ class Library_Admin {
 		echo '</p>';
 
 	}
+
+	/**
+	 * Checks to see if we are editing or adding a post.
+	 *
+	 * @return bool
+	 * @since  1.0.3
+	 */
+	public static function page_supports_add_form_button() {
+		// check we aren't calling this too early
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return false;
+		}
+
+		$screen = get_current_screen();
+		$is_post_edit_page = in_array( $screen->parent_base, array( 'edit' ) );
+
+		$display_add_form_button = apply_filters( 'library_display_add_form_button', $is_post_edit_page );
+
+		return $display_add_form_button;
+	}
+
+	/**
+	 * Adds a button to the editor
+	 *
+	 * @since 1.0.3
+	 */
+	public function add_form_button() {
+		$is_add_form_page = self::page_supports_add_form_button();
+		if ( ! $is_add_form_page ) {
+			return;
+		}
+
+		// do a version check for the new 3.5 UI
+		$version = get_bloginfo( 'version' );
+
+		if ( $version < 3.5 ) {
+			// show button for v 3.4 and below
+			echo '<a href="#TB_inline?width=480&inlineId=select_library_shortcode" class="thickbox" id="add_gform">' . __( 'Add Library Shortcode', 'library' ) . '</a>';
+		} else {
+			// display button matching new UI
+			echo '<a href="#TB_inline?width=480&inlineId=select_library_shortcode" class="thickbox button library_media_link" id="add_library_shortcode" title="' . __( 'Add Library Shortcode', 'library' ) . '">' . __( 'Add Library Shortcode', 'library' ) . '</a>';
+		}
+	}
+
+	/**
+	 * Add the form for inserting shortcodes into posts
+	 *
+	 * @since 1.0.3
+	 */
+	public static function add_mce_popup() {
+		if ( ! self::page_supports_add_form_button() ) {
+			return;
+		}
+		?>
+		<script>
+			function library_insert_shortcode() {
+				var term_slug = jQuery( '#add_term_slug' ).val();
+				if ( '' === term_slug ) {
+					alert( '<?php _e( 'Please select a shortcode', 'library' ); ?>' );
+					return;
+				}
+
+				window.send_to_editor( '[library term="' + term_slug + '"]' );
+			}
+		</script>
+
+		<div id="select_library_shortcode" style="display:none;">
+			<div class="wrap">
+				<h3><?php _e( 'Insert A Term', 'library' ); ?></h3>
+				<p>
+					<?php _e( 'Select a term below to add it to your post or page.', 'library' ); ?>
+				</p>
+				<p>
+					<select id="add_term_slug">
+						<option value=""><?php _e( 'Select a Term', 'library' ); ?></option>
+						<?php
+							// TODO: what happens when there are 1000 terms? AJAX list with a short fallback
+							$args = array(
+								'post_type' => 'library_term',
+								'order'     => 'ASC',
+								'orderby'   => 'title',
+							);
+							$query = new WP_Query( $args );
+
+							if ( $query->have_posts() ) {
+								global $post;
+								while ( $query->have_posts() ) {
+									$query->the_post();
+								?>
+								<option value="<?php echo esc_attr( $post->post_name ); ?>"><?php the_title(); ?></option>
+								<?php
+								}
+							}
+							wp_reset_postdata();
+						?>
+					</select> <br/>
+				</p>
+				<p>
+					<input type="button" class="button button-primary" value="<?php esc_attr_e( 'Insert Shortcode', 'library' ); ?>" onclick="library_insert_shortcode();"/>&nbsp;&nbsp;&nbsp;
+					<a class="button" onclick="tb_remove(); return false;"><?php esc_attr_e( 'Cancel', 'library' ); ?></a>
+				</p>
+			</div>
+		</div>
+
+		<?php
+	}
+
 
 }
