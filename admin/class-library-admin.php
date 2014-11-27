@@ -168,6 +168,10 @@ class Library_Admin {
 		$screen = get_current_screen();
 		$is_post_edit_page = in_array( $screen->parent_base, array( 'edit' ) );
 
+		if ( 'library_term' == $screen->post_type ) {
+			$is_post_edit_page = false;
+		}
+
 		$display_add_form_button = apply_filters( 'library_display_add_form_button', $is_post_edit_page );
 
 		return $display_add_form_button;
