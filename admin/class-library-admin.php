@@ -224,7 +224,7 @@ class Library_Admin {
 
 		<div id="select_library_shortcode" style="display:none;">
 			<div class="wrap">
-				<h3><?php _e( 'Insert A Term', 'library' ); ?></h3>
+				<h3><?php _e( 'Insert A Shortcode', 'library' ); ?></h3>
 				<p>
 					<?php _e( 'Select a term below to add it to your post or page.', 'library' ); ?>
 				</p>

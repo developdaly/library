@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0.3\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/plugins/library\n"
-"POT-Creation-Date: 2014-11-27 12:22-0000\n"
-"PO-Revision-Date: 2014-11-27 12:25-0000\n"
+"POT-Creation-Date: 2014-11-28 10:59-0000\n"
+"PO-Revision-Date: 2014-11-28 10:59-0000\n"
 "Last-Translator: Mike Manger <mike.manger@lighthouseuk.net>\n"
 "Language-Team: Develop Daly <patrick@developdaly.com>\n"
 "Language: en_US\n"
@@ -88,30 +88,30 @@ msgid ""
 "title."
 msgstr ""
 
-#: admin/class-library-admin.php:192 admin/class-library-admin.php:195
+#: admin/class-library-admin.php:196 admin/class-library-admin.php:199
 msgid "Add Library Shortcode"
 msgstr ""
 
-#: admin/class-library-admin.php:213
+#: admin/class-library-admin.php:217
 msgid "Please select a shortcode"
 msgstr ""
 
-#: admin/class-library-admin.php:223
-msgid "Insert A Term"
-msgstr ""
-
-#: admin/class-library-admin.php:225
-msgid "Select a term below to add it to your post or page."
+#: admin/class-library-admin.php:227
+msgid "Insert A Shortcode"
 msgstr ""
 
 #: admin/class-library-admin.php:229
+msgid "Select a term below to add it to your post or page."
+msgstr ""
+
+#: admin/class-library-admin.php:233
 msgid "Select a Term"
 msgstr ""
 
-#: admin/class-library-admin.php:253
+#: admin/class-library-admin.php:257
 msgid "Insert Shortcode"
 msgstr ""
 
-#: admin/class-library-admin.php:254
+#: admin/class-library-admin.php:258
 msgid "Cancel"
 msgstr ""
