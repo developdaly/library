@@ -234,9 +234,11 @@ class Library_Admin {
 						<?php
 							// TODO: what happens when there are 1000 terms? AJAX list with a short fallback
 							$args = array(
-								'post_type' => 'library_term',
-								'order'     => 'ASC',
-								'orderby'   => 'title',
+								'post_type'      => 'library_term',
+								'order'          => 'ASC',
+								'orderby'        => 'title',
+								'posts_per_page' => 200,
+								'no_found_rows'  => true,
 							);
 							$query = new WP_Query( $args );
 
