@@ -119,24 +119,18 @@ class Library {
 	 * @since    1.0.0
 	 */
 	public function shortcode( $atts ) {
-		global $post;
-		
+
 		$args = array(
 			'name' => $atts['term'],
-			'post_type' => 'library_term'
+			'post_type' => 'library_term',
 		);
-		
-		$query = new WP_Query( $args );
 
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$output = get_the_content();
-			}
+		$posts = get_posts( $args );
+
+		foreach ( $posts as $post ) {
+			$output = $post->post_content;
 		}
 
-		wp_reset_postdata();
-		
 		return $output;
 	}
 
