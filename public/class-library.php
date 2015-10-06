@@ -128,9 +128,9 @@ class Library {
 
 		$query = new WP_Query( $args );
 
-        $output = '';
+		$output = '';
 
-        if ( $query->have_posts() ) {
+		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				$output = get_the_content();
