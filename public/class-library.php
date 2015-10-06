@@ -64,7 +64,7 @@ class Library {
 
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-		
+
 		// Add the library shortcode
 		add_shortcode( 'library', array( $this, 'shortcode' ) );
 
@@ -97,7 +97,7 @@ class Library {
 
 		return self::$instance;
 	}
-	
+
 	/**
 	 * Load the plugin text domain for translation.
 	 *
@@ -120,15 +120,17 @@ class Library {
 	 */
 	public function shortcode( $atts ) {
 		global $post;
-		
+
 		$args = array(
 			'name' => $atts['term'],
 			'post_type' => 'library_term'
 		);
-		
+
 		$query = new WP_Query( $args );
 
-		if ( $query->have_posts() ) {
+        $output = '';
+
+        if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				$output = get_the_content();
@@ -136,7 +138,7 @@ class Library {
 		}
 
 		wp_reset_postdata();
-		
+
 		return $output;
 	}
 
