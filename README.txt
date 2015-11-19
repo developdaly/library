@@ -59,6 +59,10 @@ The copyright line in the footer of a website might change sometimes to reflect 
 
 == Changelog ==
 
+= 1.0.3 =
+* Cache library posts and clear when updated
+* Abide by WordPress PHP coding standards
+
 = 1.0.2 =
 * Localized admin screen strings
 * Escaped admin screen strings
