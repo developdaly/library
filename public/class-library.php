@@ -61,12 +61,15 @@ class Library {
 	 * @since     1.0.0
 	 */
 	private function __construct() {
-
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
 		// Add the library shortcode
 		add_shortcode( 'library', array( $this, 'shortcode' ) );
+
+		// Clears the library shortcode cache on content change
+		add_action( 'save_post', array( $this, 'clear_cache_on_library_save' ) );
+		// TODO Investigate using a custom action specific to the custom post type http://stackoverflow.com/a/6270232
 
 	}
 
@@ -104,13 +107,11 @@ class Library {
 	 * @since    1.0.0
 	 */
 	public function load_plugin_textdomain() {
-
 		$domain = $this->plugin_slug;
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 
 		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
-		load_plugin_textdomain( $domain, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
-
+		load_plugin_textdomain( $domain, false, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 	}
 
 	/**
@@ -121,14 +122,21 @@ class Library {
 	public function shortcode( $atts ) {
 		global $post;
 
-		$args = array(
-			'name' => $atts['term'],
-			'post_type' => 'library_term'
-		);
+		$cacheKey = 'library_term_' . $atts['term'];
 
-		$query = new WP_Query( $args );
+		$query = wp_cache_get( $cacheKey );
 
-		$output = '';
+		if ( $query === false ) {
+			$args = array(
+				'name' => $atts['term'],
+				'post_type' => 'library_term',
+			);
+
+			$query = new WP_Query( $args );
+
+			wp_cache_set( $cacheKey, $query );
+
+		}
 
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
@@ -139,7 +147,19 @@ class Library {
 
 		wp_reset_postdata();
 
-		return $output;
+		if ( ! empty( $output ) ) {
+			return do_shortcode( $output );
+		}
 	}
 
+	/**
+	* Clears the shortcode cache on content change.
+	*/
+	public function clear_cache_on_library_save( $post_id ) {
+		if ( ( ! wp_is_post_autosave( $post_id ) ) && ( get_post_status( $post_id ) === 'publish' ) ) {
+			$post = get_post( $post_id );
+			$cacheKey = 'library_term_' . $post->post_name;
+			wp_cache_delete( $cacheKey );
+		}
+	}
 }
