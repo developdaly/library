@@ -9,13 +9,13 @@
  * @author    Patrick Daly <patrick@developdaly.com>
  * @license   GPL-2.0+
  * @link      http://wordpress.org/plugins/library/plugins/library
- * @copyright 2014 Patrick Daly
+ * @copyright 2015 Patrick Daly
  *
  * @wordpress-plugin
  * Plugin Name:       Library
  * Plugin URI:        http://wordpress.org/plugins/library
  * Description:       Create a library of reusable terms (strings) and display their contents anywhere on your site with a shortcode.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Author:            Patrick Daly
  * Author URI:        http://developdaly.com
  * Text Domain:       library
