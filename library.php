@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 require_once( plugin_dir_path( __FILE__ ) . 'public/class-library.php' );
 
-add_action( 'plugins_loaded', array( 'Library', 'get_instance' ) );
+add_action( 'init', array( 'Library', 'get_instance' ) );
 
 /*----------------------------------------------------------------------------*
  * Dashboard and Administrative Functionality
@@ -45,6 +45,6 @@ add_action( 'plugins_loaded', array( 'Library', 'get_instance' ) );
 if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-library-admin.php' );
-	add_action( 'plugins_loaded', array( 'Library_Admin', 'get_instance' ) );
+	add_action( 'init', array( 'Library_Admin', 'get_instance' ) );
 
 }
