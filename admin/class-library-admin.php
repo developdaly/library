@@ -50,7 +50,7 @@ class Library_Admin {
 		$plugin = Library::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
-		add_action( 'init', array( $this, 'register' ) );
+		add_action( 'init', array( $this, 'register' ), 11 );
 
 		/* Fire our meta box setup function on the post editor screen. */
 		add_action( 'load-post.php',		array( $this, 'library_meta_boxes_setup' ) );
@@ -106,7 +106,7 @@ class Library_Admin {
 			'query_var' => true,
 			'can_export' => true,
 			'rewrite' => true,
-			'capability_type' => 'post'
+			'capability_type' => 'post',
 		);
 
 		register_post_type( 'library_term', $args );
@@ -148,7 +148,7 @@ class Library_Admin {
 	public function library_class_meta_box( $object, $box ) {
 		global $post;
 
-		echo esc_html( _e( '<p>To display this inside your content use <code>[library term="'. $post->post_name .'"]</code> OR to use this inside of a template file use <code>&lt;?php echo do_shortcode(\'[library term="'. $post->post_name .'"]\') ?&gt;</code></p>', 'library' ) );
+		echo esc_html( _e( '<p>To display this inside your content use <code>[library term="'. $post->post_name .'"]</code> OR to use this inside of a template file use <code>&lt;?php echo do_shortcode( \'[library term="'. $post->post_name .'"]\' ); ?&gt;</code></p>', 'library' ) );
 		echo esc_html( _e( '<p>You can change the term slug by editing the permalink slug underneath the title.</p>', 'library' ) );
 
 	}

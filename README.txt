@@ -15,7 +15,7 @@ Create a library of reusable terms (strings) and display their contents anywhere
 
 Library lets you create a library of reusable terms (or strings) without any code necessary and access a term's content with a shortcode.
 
-You can add a term (just like you'd add a post or page) called "Copyright Line" and its content could be "©2014 Your Company" and then use that anywhere on the site with `[library term="copyright-line"]` or `<?php do_shortcode( '[library term="copyright-line"] ); ?>`.
+You can add a term (just like you'd add a post or page) called "Copyright Line" and its content could be "©2014 Your Company" and then use that anywhere in Post content with `[library term="copyright-line"]` or in templates with `<?php do_shortcode( '[library term="copyright-line"] ); ?>`.
 
 Because the library terms are a post type they inherit WordPress features like revision history, draft/scheduled/published, ability to change the term slug, full HTML, and so on.
 
