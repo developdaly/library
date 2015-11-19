@@ -1,0 +1,15 @@
+{
+	"name": "santander-plugins/library",
+	"require": {
+			"wp-coding-standards/wpcs": "2014-12-11",
+			"sebastian/phpcpd": "*",
+			"phpunit/phpunit": "~4.8",
+			"squizlabs/php_codesniffer": "2.*"
+	},
+	"authors": [
+			{
+					"name": "Patrick Daly",
+					"email": "patrick@developdaly.com"
+			}
+	]
+}
