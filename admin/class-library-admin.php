@@ -57,7 +57,7 @@ class Library_Admin {
 
 		add_action( 'media_buttons', array( $this, 'add_form_button' ), 20 );
 
-		add_action( 'admin_footer',  array( $this, 'add_mce_popup' ) );
+		add_action( 'admin_footer',  array( $this, 'add_mce_popup' ), 11 );
 
 	}
 
