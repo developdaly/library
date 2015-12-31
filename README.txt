@@ -1,5 +1,5 @@
 === Library ===
-Contributors: developdaly
+Contributors: developdaly, mikemanger, adamkrawiec
 Tags: strings, library, content, shortcodes, dictionary, wp-strings
 Requires at least: 3.8.1
 Tested up to: 4.4
