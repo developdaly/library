@@ -59,6 +59,10 @@ The copyright line in the footer of a website might change sometimes to reflect 
 
 == Changelog ==
 
+= 1.1.0 =
+* Adds a media button to easily insert shortcodes
+* Improved error handling
+
 = 1.0.2 =
 * Localized admin screen strings
 * Escaped admin screen strings
