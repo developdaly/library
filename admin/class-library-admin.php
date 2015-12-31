@@ -50,7 +50,7 @@ class Library_Admin {
 		$plugin = Library::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
-		add_action( 'init', array( $this, 'register' ) );
+		add_action( 'init', array( $this, 'register' ), 11 );
 
 		/* Fire our meta box setup function on the post editor screen. */
 		add_action( 'load-post.php',		array( $this, 'library_meta_boxes_setup' ) );
