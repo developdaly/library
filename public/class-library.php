@@ -121,25 +121,33 @@ class Library {
 	public function shortcode( $atts ) {
 		global $post;
 
-		$args = array(
-			'name' => $atts['term'],
-			'post_type' => 'library_term',
-		);
+		$cacheKey = 'library-' . $atts['term'];
 
-		$query = new WP_Query( $args );
+		$cached = get_transient( $cacheKey );
 
-		$output = '';
+		if ( false === $cached ) {
+			$args = array(
+				'name' => $atts['term'],
+				'post_type' => 'library_term',
+			);
 
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$output = get_the_content();
+			$query = new WP_Query( $args );
+
+			$cached = '';
+
+			if ( $query->have_posts() ) {
+				while ( $query->have_posts() ) {
+					$query->the_post();
+					$cached = get_the_content();
+				}
 			}
+
+			set_transient( $cacheKey, $cached, 60 * 60 );
+
+			wp_reset_postdata();
 		}
 
-		wp_reset_postdata();
-
-		return $output;
+		return $cached;
 	}
 
 }
