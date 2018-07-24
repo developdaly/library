@@ -233,16 +233,26 @@ class Library_Admin {
 						<option value=""><?php _e( 'Select a Term', 'library' ); ?></option>
 						<?php
 							// TODO: what happens when there are 1000 terms? AJAX list with a short fallback
-							$args = array(
-								'post_type'      => 'library_term',
-								'order'          => 'ASC',
-								'orderby'        => 'title',
-								'posts_per_page' => 200,
-								'no_found_rows'  => true,
-							);
-							$query = new WP_Query( $args );
+							$cacheKey = 'library-terms-page-1';
 
-							if ( $query->have_posts() ) {
+							$cached = get_transient( $cacheKey );
+
+							if ( false === $cached ) {
+
+								$args = array(
+									'post_type'      => 'library_term',
+									'order'          => 'ASC',
+									'orderby'        => 'title',
+									'posts_per_page' => 200,
+									'no_found_rows'  => true,
+								);
+
+								$cached = new WP_Query( $args );
+
+								set_transient( $cacheKey, $cached, 60 * 60 );
+							}
+
+							if ( $cached->have_posts() ) {
 								global $post;
 								while ( $query->have_posts() ) {
 									$query->the_post();
