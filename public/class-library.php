@@ -138,7 +138,7 @@ class Library {
 
 		$library_last_modified_key = get_transient( self::LIBRARY_LAST_MODIFIED );
 
-		$cacheKey = 'library-' . $library_last_modified_key . '-' . $atts['term'];
+		$cacheKey = 'library-'  . $atts['term'] . '-' . $library_last_modified_key;
 
 		$cached = get_transient( $cacheKey );
 
